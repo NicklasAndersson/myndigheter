@@ -19,7 +19,7 @@ function App() {
 
   const paginationModel = { page: 0, pageSize: 50 };
   const columns = [
-    { field: 'Namn', headerName: 'Namn', width: 300 },
+    { field: 'Namn', headerName: 'Namn', width: 380 },
     { field: 'Organisationsnr', headerName: 'Org nr', width: 110 },
     { field: 'Webbadress', headerName: 'Webbadress', width: 350 },
     {
