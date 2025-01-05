@@ -19,14 +19,10 @@ function App() {
 
   const paginationModel = { page: 0, pageSize: 50 };
   const columns = [
-    { field: 'Namn', headerName: 'Namn', width: 380 },
+    { field: 'Namn', headerName: 'Namn', width: 350 },
     { field: 'Organisationsnr', headerName: 'Org nr', width: 110 },
     { field: 'Webbadress', headerName: 'Webbadress', width: 350 },
-    {
-      field: 'Epost',
-      headerName: 'Epost',
-      width: 250,
-    },
+    { field: 'Epost', headerName: 'Epost', width: 250 },
   ];
   
   return (
