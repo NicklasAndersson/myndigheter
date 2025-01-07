@@ -20,7 +20,7 @@ function App() {
         const parsedUrl = URL.parse(url.startsWith("http") ? url : `https://${url}`)
         const hostname = parsedUrl.hostname.replace('www.', '').split('.').slice(-2).join('.')
 
-        const whois = await fetch(`https://http-whois.wwn.se/?domain=${hostname}`,
+        const whois = await fetch(`https://whois.wwn.se/?domain=${hostname}`,
           {
             headers: {
               "Accept": "application/json"
