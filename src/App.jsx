@@ -14,7 +14,7 @@ function App() {
   const myndigheter = async () => {
     const resp = await fetch('https://alla-myndigheter.wwn.workers.dev/')
     const respJson = await resp.json();
-    const respWhois = await Promise.all( respJson.map(async mynd => {
+    const respWhois = await Promise.all(respJson.map(async mynd => {
       try {
         const url = mynd.Webbadress
         const parsedUrl = URL.parse(url.startsWith("http") ? url : `https://${url}`)
@@ -38,8 +38,17 @@ function App() {
       return {
         ...mynd
       }
-    }))
-      setMyndighet(respWhois)
+    })
+  )
+      const sortedMynd = respWhois.sort((a, b) => {
+        if(!b.whois?.expires){
+          return -1
+        } else if (!a.whois?.expires) {
+          return 1
+        }
+        return new Date(a.whois.expires) - new Date(b.whois.expires);
+      })
+      setMyndighet(sortedMynd)
       console.log(respWhois)
   }
 
